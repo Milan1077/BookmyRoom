@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - BookMyRoom</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .contact-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+            padding: 40px 32px;
+        }
+        .contact-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            color: #ff385c;
+        }
+        .contact-section {
+            margin-bottom: 32px;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 18px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        .contact-form button {
+            background: #ff385c;
+            color: #fff;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .contact-form button:hover {
+            background: #e31c5f;
+        }
+        .contact-info {
+            margin-top: 24px;
+            font-size: 1.1rem;
+        }
+        .contact-success {
+            color: green;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">🏠 BookMyRoom</div>
+        <nav class="nav-tabs">
+            <a href="../index.html" class="nav-tab">
+                <span class="nav-icon">🏠</span>
+                Home
+            </a>
+            <a href="about.html" class="nav-tab">
+                <span class="nav-icon">ℹ️</span>
+                About Us
+            </a>
+            <a href="contact.html" class="nav-tab active">
+                <span class="nav-icon">📞</span>
+                Contact Us
+            </a>
+            <a href="services.html" class="nav-tab">
+                <span class="nav-icon">🛎️</span>
+                Services
+            </a>
+        </nav>
+        <div class="user-menu">
+            <a href="#" class="become-host">Become a host</a>
+            <div class="menu-btn">
+                <span>🌐</span>
+                <span>☰</span>
+                <span>👤</span>
+            </div>
+        </div>
+    </header>
+    <main class="contact-container">
+        <div class="contact-title">Contact Us</div>
+        <div class="contact-section">
+            <p>Have questions, feedback, or need help? Fill out the form below and our team will get back to you as soon as possible.</p>
+        </div>
+        <form class="contact-form" id="contactForm">
+            <div class="contact-success" id="contactSuccess" style="display:none;">Thank you for contacting us! We'll get back to you soon.</div>
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="contact-info">
+            <p><b>Email:</b> support@bookmyroom.com</p>
+            <p><b>Phone:</b> +977-1-5555555</p>
+            <p><b>Address:</b> Durbar Marg, Kathmandu, Nepal</p>
+        </div>
+    </main>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('contactSuccess').style.display = 'block';
+            this.reset();
+        });
+    </script>
+</body>
+</html>
