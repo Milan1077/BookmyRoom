@@ -14,19 +14,19 @@
         <div class="logo">🏠 BookMyRoom</div>
 
         <nav class="nav-tabs">
-            <a href="#" class="nav-tab active">
+            <a href="pages/login.html" class="nav-tab active">
                 <span class="nav-icon">🏠</span>
                 Homes
             </a>
-            <a href="pages/about.html" class="nav-tab">
+            <a href="pages/login.html" class="nav-tab">
                 <span class="nav-icon">ℹ️</span>
                 About Us
             </a>
-            <a href="pages/contact.html" class="nav-tab">
+            <a href="pages/login.html" class="nav-tab">
                 <span class="nav-icon">📞</span>
                 Contact Us
             </a>
-            <a href="pages/services.html" class="nav-tab">
+            <a href="pages/login.html" class="nav-tab">
                 <span class="nav-icon">🛎️</span>
                 Services
             </a>
@@ -34,7 +34,7 @@
 
         <div class="user-menu">
             <a href="#" class="become-host">Become a host</a>
-            <div class="menu-btn" onclick="toggleMenu()">
+            <div class="menu-btn" onclick="showUserBar()">
                 <span>🌐</span>
                 <span>☰</span>
                 <span>👤</span>
@@ -45,17 +45,25 @@
     <!-- Search Bar -->
     <div class="search-container">
         <div class="search-bar">
-            <div class="search-field" onclick="focusSearch('where')">
+            <div class="search-field" onclick="openDestinationsChooser()">
                 <div class="search-label">Where</div>
                 <div class="search-placeholder" id="where-text">Search destinations</div>
+                <div id="destinations-dropdown" class="destinations-dropdown" style="display:none;">
+                    <div class="destination-option" onclick="selectDestination('Kathmandu')">Kathmandu</div>
+                    <div class="destination-option" onclick="selectDestination('Pokhara')">Pokhara</div>
+                    <div class="destination-option" onclick="selectDestination('Chitwan')">Chitwan</div>
+                    <div class="destination-option" onclick="selectDestination('Mustang')">Mustang</div>
+                </div>
             </div>
-            <div class="search-field" onclick="focusSearch('checkin')">
+            <div class="search-field" onclick="openDateChooser('checkin')">
                 <div class="search-label">Check in</div>
                 <div class="search-placeholder" id="checkin-text">Add dates</div>
+                <input type="date" id="checkin-date" style="display:none;">
             </div>
-            <div class="search-field" onclick="focusSearch('checkout')">
+            <div class="search-field" onclick="openDateChooser('checkout')">
                 <div class="search-label">Check out</div>
                 <div class="search-placeholder" id="checkout-text">Add dates</div>
+                <input type="date" id="checkout-date" style="display:none;">
             </div>
             <div class="search-field" onclick="focusSearch('guests')">
                 <div class="search-label">Who</div>
@@ -71,7 +79,7 @@
         <section>
             <div class="section-title">
                 Popular homes in Kathmandu
-                <a href="#" class="view-all">View all →</a>
+                <a href="pages/login.html" class="view-all">View all →</a>
             </div>
             <div class="property-grid" id="kathmandu-properties">
                 <!-- Properties will be loaded here -->
@@ -82,7 +90,7 @@
         <section>
             <div class="section-title">
                 Available next month in Pokhara
-                <a href="#" class="view-all">View all →</a>
+                <a href="pages/login.html" class="view-all">View all →</a>
             </div>
             <div class="property-grid" id="pokhara-properties">
                 <!-- Properties will be loaded here -->
@@ -93,7 +101,7 @@
         <section>
             <div class="section-title">
                 Stay in Chitwan
-                <a href="#" class="view-all">View all →</a>
+                <a href="pages/login.html" class="view-all">View all →</a>
             </div>
             <div class="property-grid" id="chitwan-properties">
                 <!-- Properties will be loaded here -->
@@ -104,7 +112,7 @@
         <section>
             <div class="section-title">
                 Explore Mustang
-                <a href="#" class="view-all">View all →</a>
+                <a href="pages/login.html" class="view-all">View all →</a>
             </div>
             <div class="property-grid" id="mustang-properties">
                 <!-- Properties will be loaded here -->
@@ -113,3 +121,7 @@
     </main>
 
     <script src="js/main.js"></script>
+    <div id="footer-root"></div>
+</body>
+
+</html>

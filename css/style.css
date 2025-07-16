@@ -4,10 +4,17 @@
     box-sizing: border-box;
 }
 
+body, html {
+    height: 100%;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #fff;
     color: #222;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header Styles */
@@ -187,6 +194,7 @@ body {
     padding: 40px;
     max-width: 1400px;
     margin: 0 auto;
+    flex: 1 0 auto;
 }
 
 .section-title {
@@ -321,6 +329,125 @@ body {
     font-size: 14px;
 }
 
+/* Restaurant Details Page */
+.details-container {
+    max-width: 600px;
+    margin: 48px auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 36px 28px;
+    text-align: center;
+}
+
+.details-container h1 {
+    color: #ff385c;
+    margin-bottom: 18px;
+}
+
+.details-container p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.details-container a {
+    display: inline-block;
+    margin-top: 24px;
+    color: #fff;
+    background: #ff385c;
+    padding: 10px 28px;
+    border-radius: 22px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.details-container a:hover {
+    background: #e11d48;
+}
+
+.restaurant-image {
+    width: 100%;
+    max-width: 420px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* Footer Styles */
+.footer {
+    width: 100%;
+    background: #f7f7f7;
+    color: #888;
+    text-align: center;
+    padding: 18px 0 12px 0;
+    font-size: 15px;
+    margin-top: 40px;
+    border-top: 1px solid #ececec;
+    flex-shrink: 0;
+    position: relative;
+    bottom: 0;
+}
+
+/* Destinations Dropdown */
+.destinations-dropdown {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ececec;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    margin-top: 8px;
+    z-index: 20;
+    width: 220px;
+    left: 0;
+}
+
+.destination-option {
+    padding: 12px 18px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #222;
+    transition: background 0.2s;
+}
+
+.destination-option:hover {
+    background: #f7f7f7;
+}
+
+/* User Bar */
+.user-bar {
+    position: fixed;
+    top: 70px;
+    right: 32px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    padding: 18px 24px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 160px;
+}
+
+.user-bar-btn {
+    background: #ff385c;
+    color: #fff;
+    border: none;
+    border-radius: 22px;
+    padding: 10px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.user-bar-btn:hover {
+    background: #e11d48;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .header {
@@ -353,6 +480,40 @@ body {
     }
 }
 
+@media (max-width: 900px) {
+    .main-content {
+        max-width: 98vw;
+        padding: 0 8px 32px 8px;
+    }
+    .property-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .details-container {
+        padding: 24px 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 8px;
+    }
+    .logo {
+        font-size: 1.2rem;
+    }
+    .nav-tabs {
+        gap: 8px;
+    }
+    .main-content {
+        padding: 0 2px 24px 2px;
+    }
+    .details-container {
+        margin: 24px 2px;
+        padding: 18px 4px;
+    }
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {
@@ -364,6 +525,16 @@ body {
         transform: translateY(0);
     }
 }
+
+.property-card:nth-child(1) { animation-delay: 0.1s; }
+.property-card:nth-child(2) { animation-delay: 0.2s; }
+.property-card:nth-child(3) { animation-delay: 0.3s; }
+.property-card:nth-child(4) { animation-delay: 0.4s; }
+.property-card:nth-child(5) { animation-delay: 0.5s; }
+.property-card:nth-child(6) { animation-delay: 0.6s; }
+.property-card:nth-child(7) { animation-delay: 0.7s; }
+    
+
 
 .property-card:nth-child(1) { animation-delay: 0.1s; }
 .property-card:nth-child(2) { animation-delay: 0.2s; }

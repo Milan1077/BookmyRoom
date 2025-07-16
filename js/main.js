@@ -108,10 +108,34 @@ function renderProperties(properties, containerId) {
     `).join('');
 }
 
+// Date chooser for check-in/check-out
+function openDateChooser(type) {
+    var inputId = type === 'checkin' ? 'checkin-date' : 'checkout-date';
+    var textId = type === 'checkin' ? 'checkin-text' : 'checkout-text';
+    var input = document.getElementById(inputId);
+    if (!input) return;
+    input.style.display = 'block';
+    input.focus();
+    input.onchange = function() {
+        if (input.value) {
+            document.getElementById(textId).textContent = input.value;
+        }
+        input.style.display = 'none';
+    };
+}
+// Make function available globally
+window.openDateChooser = openDateChooser;
+
 // Render all property sections on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function() {
     renderProperties(kathmanduProperties, 'kathmandu-properties');
     renderProperties(pokharaProperties, 'pokhara-properties');
     renderProperties(chitwanProperties, 'chitwan-properties');
     renderProperties(mustangProperties, 'mustang-properties');
+
+    // Dynamically insert footer
+    const footer = document.createElement('footer');
+    footer.className = 'footer';
+    footer.innerHTML = '&copy; ' + new Date().getFullYear() + ' BookMyRoom. All rights reserved.';
+    document.getElementById('footer-root').appendChild(footer);
 });
